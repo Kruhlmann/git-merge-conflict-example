@@ -1,15 +1,15 @@
 #include <stdio.h>
 
-void print_fibonacci_numbers(int n) {
-    int nextTerm;
-    int t1;
-    int t2 = 1;
+int fibbonacci(int n) {
+    if (n <= 1) {
+        return n;
+    }
+    return fibbonacci(n - 1) + fibbonacci(n - 2);
+}
 
+void print_fibonacci_numbers(int n) {
     for (int i = 1; i <= n; ++i) {
-        printf("%d, ", t1);
-        nextTerm = t1 + t2;
-        t1 = t2;
-        t2 = nextTerm;
+        printf("%d, ", fibbonacci(i));
     }
     printf("\n");
 }
